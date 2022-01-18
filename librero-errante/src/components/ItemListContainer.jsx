@@ -1,5 +1,5 @@
 import React , { useState , useEffect } from "react";
-import Item from './Item';
+import ItemList from "./ItemList";
 import Grimund from '../img/grimund.jpg';
 import Woric from '../img/woric.jpg';
 import LiZhu from '../img/liZhu.jpg';
@@ -29,28 +29,11 @@ export default function ItemListContainer({message , classes}) {
                     console.log(err);
                 });
     });
-    
 
     return (
         <>
             <h1 className={classes}>{message}</h1>
-            {itemArrayDone ? 
-                <>
-                    <div className="flex justify-center mt-5">
-                        {itemArray.map((item) => {
-                            return <Item name={item.title} stock={item.stock} itemPrice={item.price} description={item.description} imgUrl={item.imgUrl} key={item.id} />
-                        })}
-                    </div>
-                </>
-                :
-                <>
-                    <div className="flex justify-center mt-5">
-                        <Item />
-                    </div>
-                </>
-            }
+            <ItemList items={itemArray} itemsLoaded={itemArrayDone} />
         </>
-        
-        
     );
 }
