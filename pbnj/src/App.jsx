@@ -27,7 +27,7 @@ function App() {
           <Route exact path="/types/:typeName">
             <ItemListContainer message={message} classes={classes}/>
           </Route>
-          <Route exact path="/types/:typeName/:individual">
+          <Route path="/types/:typeName/:individual">
             <ItemListContainer message={message} classes={classes}/>
           </Route>
           

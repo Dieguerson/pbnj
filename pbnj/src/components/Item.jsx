@@ -1,16 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { NavLink, useParams } from 'react-router-dom'
 import LoadImg from '../img/loading.jpeg';
 import ItemDetailContainer from './ItemDetailContainer';
 
 export default function Item({name, imgUrl, singlePokemon}) {
-    const {typeName} = useParams()
+    const {typeName, individual} = useParams()
     const pokemonDetails = singlePokemon
     const pokemonImage = imgUrl
     const [render, setRender] = useState(false);
     const openCard = () => {
         setRender(render ? false : true)
     }
+
+    useEffect(() => {
+        if(individual && individual.replace(":", "") === name){
+            setRender(true)
+            console.log(render)
+        }
+    }, [individual])
     return (
         <>
             <article className="mt-4">
