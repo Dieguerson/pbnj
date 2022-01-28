@@ -30,10 +30,11 @@ export default function ItemDetailContainer({pokemonDetails, pokemonImage}) {
                     setType1(pokemonDetails.types[0].type.name);
                     setType2(pokemonDetails.types[0].type.name);
                 }
+                console.log(type1, type2)
 
                 switch (type1){
                     case "normal":
-                        setGradientColor1("from-warmGray-500");
+                        setGradientColor1("from-[#A8A878]");
                         break;
                     case "fire":
                         setGradientColor1("from-orange-400");
@@ -60,7 +61,7 @@ export default function ItemDetailContainer({pokemonDetails, pokemonImage}) {
                         setGradientColor1("from-orange-300");
                         break;
                     case "flying":
-                        setGradientColor1("from-violet-400");
+                        setGradientColor1("from-purple-400");
                         break;
                     case "psychic":
                         setGradientColor1("from-rose-400");
@@ -72,7 +73,7 @@ export default function ItemDetailContainer({pokemonDetails, pokemonImage}) {
                         setGradientColor1("from-yellow-600");
                         break;
                     case "ghost":
-                        setGradientColor1("from-blueGray-500");
+                        setGradientColor1("from-[#705898]");
                         break;
                     case "dark":
                         setGradientColor1("from-warmGray-600");
@@ -81,7 +82,7 @@ export default function ItemDetailContainer({pokemonDetails, pokemonImage}) {
                         setGradientColor1("from-violet-600");
                         break;
                     case "steel":
-                        setGradientColor1("from-blueGray-300");
+                        setGradientColor1("from-[#B8B8D0]");
                         break;
                     case "fairy":
                         setGradientColor1("from-rose-300");
@@ -92,7 +93,7 @@ export default function ItemDetailContainer({pokemonDetails, pokemonImage}) {
 
                 switch (type2){
                     case "normal":
-                        setGradientColor2("to-warmGray-500");
+                        setGradientColor2("to-[#A8A878]");
                         break;
                     case "fire":
                         setGradientColor2("to-orange-400");
@@ -119,7 +120,7 @@ export default function ItemDetailContainer({pokemonDetails, pokemonImage}) {
                         setGradientColor2("to-orange-300");
                         break;
                     case "flying":
-                        setGradientColor2("to-violet-400");
+                        setGradientColor2("to-purple-400");
                         break;
                     case "psychic":
                         setGradientColor2("to-rose-400");
@@ -131,7 +132,7 @@ export default function ItemDetailContainer({pokemonDetails, pokemonImage}) {
                         setGradientColor2("to-yellow-600");
                         break;
                     case "ghost":
-                        setGradientColor2("to-blueGray-500");
+                        setGradientColor2("to-[#705898]");
                         break;
                     case "dark":
                         setGradientColor2("to-warmGray-600");
@@ -140,7 +141,7 @@ export default function ItemDetailContainer({pokemonDetails, pokemonImage}) {
                         setGradientColor2("to-violet-600");
                         break;
                     case "steel":
-                        setGradientColor2("to-blueGray-300");
+                        setGradientColor2("to-[#B8B8D0]");
                         break;
                     case "fairy":
                         setGradientColor2("to-rose-300");

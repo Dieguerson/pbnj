@@ -3,7 +3,7 @@ import { PlusCircleIcon } from '@heroicons/react/outline';
 import { MinusCircleIcon } from '@heroicons/react/outline';
 import { ShoppingCartIcon } from '@heroicons/react/outline';
 
-export default function ItemCount({stock , itemPrice}) {
+export default function ItemCount({stock , itemPrice , description}) {
 
     const [ammount , setAmmount] = useState(stock > 0 ? 1 : 0);
     const [price , setPrice] = useState(itemPrice);

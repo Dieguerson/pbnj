@@ -19,80 +19,67 @@ export default function NavBar() {
                                 <NavLink activeClassName="underline" className="visited:text-black mx-2 font-bold" to={"/home"}>Home</NavLink>
                             </li>
                             <li>
-                                <NavLink activeClassName="underline" className="visited:text-black mx-2 font-bold" to={"hello"}>Types</NavLink>
+                                <NavLink activeClassName="underline" className="visited:text-black mx-2 font-bold" to={"/types"}>Types</NavLink>
                                 <ul className="bg-[#F2778D]">
                                     <li>
-                                        <NavLink activeClassName="underline" className="visited:text-black whitespace-nowrap m-2" to={"hello"}>- Normal</NavLink>
+                                        <NavLink activeClassName="underline" className="visited:text-black whitespace-nowrap m-2" to={"/types/:normal"}>- Normal</NavLink>
                                     </li>
                                     <li><hr className="border border-[#123E59] w-100 mx-4" /></li>
                                     <li>
-                                        <NavLink activeClassName="underline" className="visited:text-black whitespace-nowrap m-2" to={"hello"}>- Fire</NavLink>
+                                        <NavLink activeClassName="underline" className="visited:text-black whitespace-nowrap m-2" to={"/types/:fire"}>- Fire</NavLink>
                                     </li>
                                     <li><hr className="border border-[#123E59] w-100 mx-4" /></li>
                                     <li>
-                                        <NavLink activeClassName="underline" className="visited:text-black whitespace-nowrap m-2" to={"hello"}>- Water</NavLink>
+                                        <NavLink activeClassName="underline" className="visited:text-black whitespace-nowrap m-2" to={"/types/:water"}>- Water</NavLink>
                                     </li>
                                     <li><hr className="border border-[#123E59] w-100 mx-4" /></li>
                                     <li>
-                                        <NavLink activeClassName="underline" className="visited:text-black whitespace-nowrap m-2" to={"hello"}>- Grass</NavLink>
+                                        <NavLink activeClassName="underline" className="visited:text-black whitespace-nowrap m-2" to={"/types/:grass"}>- Grass</NavLink>
                                     </li>
                                     <li><hr className="border border-[#123E59] w-100 mx-4" /></li>
                                     <li>
-                                        <NavLink activeClassName="underline" className="visited:text-black whitespace-nowrap m-2" to={"hello"}>- Electric</NavLink>
+                                        <NavLink activeClassName="underline" className="visited:text-black whitespace-nowrap m-2" to={"/types/:electric"}>- Electric</NavLink>
                                     </li>
                                     <li><hr className="border border-[#123E59] w-100 mx-4" /></li>
                                     <li>
-                                        <NavLink activeClassName="underline" className="visited:text-black whitespace-nowrap m-2" to={"hello"}>- Ice</NavLink>
+                                        <NavLink activeClassName="underline" className="visited:text-black whitespace-nowrap m-2" to={"/types/:ice"}>- Ice</NavLink>
                                     </li>
                                     <li><hr className="border border-[#123E59] w-100 mx-4" /></li>
                                     <li>
-                                        <NavLink activeClassName="underline" className="visited:text-black whitespace-nowrap m-2" to={"hello"}>- Fighting</NavLink>
+                                        <NavLink activeClassName="underline" className="visited:text-black whitespace-nowrap m-2" to={"/types/:fighting"}>- Fighting</NavLink>
                                     </li>
                                     <li><hr className="border border-[#123E59] w-100 mx-4" /></li>
                                     <li>
-                                        <NavLink activeClassName="underline" className="visited:text-black whitespace-nowrap m-2" to={"hello"}>- Poison</NavLink>
+                                        <NavLink activeClassName="underline" className="visited:text-black whitespace-nowrap m-2" to={"/types/:poison"}>- Poison</NavLink>
                                     </li>
                                     <li><hr className="border border-[#123E59] w-100 mx-4" /></li>
                                     <li>
-                                        <NavLink activeClassName="underline" className="visited:text-black whitespace-nowrap m-2" to={"hello"}>- Ground</NavLink>
+                                        <NavLink activeClassName="underline" className="visited:text-black whitespace-nowrap m-2" to={"/types/:ground"}>- Ground</NavLink>
                                     </li>
                                     <li><hr className="border border-[#123E59] w-100 mx-4" /></li>
                                     <li>
-                                        <NavLink activeClassName="underline" className="visited:text-black whitespace-nowrap m-2" to={"hello"}>- Flying</NavLink>
+                                        <NavLink activeClassName="underline" className="visited:text-black whitespace-nowrap m-2" to={"/types/:flying"}>- Flying</NavLink>
                                     </li>
                                     <li><hr className="border border-[#123E59] w-100 mx-4" /></li>
                                     <li>
-                                        <NavLink activeClassName="underline" className="visited:text-black whitespace-nowrap m-2" to={"hello"}>- Psychic</NavLink>
+                                        <NavLink activeClassName="underline" className="visited:text-black whitespace-nowrap m-2" to={"/types/:psychic"}>- Psychic</NavLink>
                                     </li>
                                     <li><hr className="border border-[#123E59] w-100 mx-4" /></li>
                                     <li>
-                                        <NavLink activeClassName="underline" className="visited:text-black whitespace-nowrap m-2" to={"hello"}>- Bug</NavLink>
+                                        <NavLink activeClassName="underline" className="visited:text-black whitespace-nowrap m-2" to={"/types/:bug"}>- Bug</NavLink>
                                     </li>
                                     <li><hr className="border border-[#123E59] w-100 mx-4" /></li>
                                     <li>
-                                        <NavLink activeClassName="underline" className="visited:text-black whitespace-nowrap m-2" to={"hello"}>- Rock</NavLink>
+                                        <NavLink activeClassName="underline" className="visited:text-black whitespace-nowrap m-2" to={"/types/:rock"}>- Rock</NavLink>
                                     </li>
                                     <li><hr className="border border-[#123E59] w-100 mx-4" /></li>
                                     <li>
-                                        <NavLink activeClassName="underline" className="visited:text-black whitespace-nowrap m-2" to={"hello"}>- Ghost</NavLink>
+                                        <NavLink activeClassName="underline" className="visited:text-black whitespace-nowrap m-2" to={"/types/:ghost"}>- Ghost</NavLink>
                                     </li>
                                     <li><hr className="border border-[#123E59] w-100 mx-4" /></li>
                                     <li>
-                                        <NavLink activeClassName="underline" className="visited:text-black whitespace-nowrap m-2" to={"hello"}>- Dark</NavLink>
+                                        <NavLink activeClassName="underline" className="visited:text-black whitespace-nowrap m-2" to={"/types/:dragon"}>- Dragon</NavLink>
                                     </li>
-                                    <li><hr className="border border-[#123E59] w-100 mx-4" /></li>
-                                    <li>
-                                        <NavLink activeClassName="underline" className="visited:text-black whitespace-nowrap m-2" to={"hello"}>- Dragon</NavLink>
-                                    </li>
-                                    <li><hr className="border border-[#123E59] w-100 mx-4" /></li>
-                                    <li>
-                                        <NavLink activeClassName="underline" className="visited:text-black whitespace-nowrap m-2" to={"hello"}>- Steel</NavLink>
-                                    </li>
-                                    <li><hr className="border border-[#123E59] w-100 mx-4" /></li>
-                                    <li>
-                                        <NavLink activeClassName="underline" className="visited:text-black whitespace-nowrap m-2" to={"hello"}>- Fairy</NavLink>
-                                    </li>
-                                    <li><hr className="border border-[#123E59] w-100 mx-4" /></li>
                                     
                                 </ul>
                             </li>
