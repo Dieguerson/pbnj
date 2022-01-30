@@ -17,15 +17,12 @@ function App() {
 
         <Switch>
           <Route exact path="/">
-              <Redirect to="/home" />
+              <Redirect to="//wanlibReactJS" />
           </Route>
           <Route exact path="/types">
-              <Redirect to="/home" />
+              <Redirect to="//wanlibReactJS" />
           </Route>
           <Route exact path="/wanlibReactJS">
-              <Redirect to="/home" />
-          </Route>
-          <Route exact path="/home">
             <ItemListContainer message={message} classes={classes}/>
           </Route>
           <Route exact path="/types/:typeName">
