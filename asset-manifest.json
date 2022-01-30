@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/wanlibReactJS/static/css/main.8a0e8d1a.css",
+    "main.js": "/wanlibReactJS/static/js/main.74664050.js",
+    "static/js/787.7b25c85f.chunk.js": "/wanlibReactJS/static/js/787.7b25c85f.chunk.js",
+    "static/media/pb&j.png": "/wanlibReactJS/static/media/pb&j.92ddfb8a28276b85db49.png",
+    "static/media/pb&jpokeball.png": "/wanlibReactJS/static/media/pb&jpokeball.a23ed8ea9beb570f0ba9.png",
+    "static/media/loading.jpeg": "/wanlibReactJS/static/media/loading.cc881f4032046327c5d2.jpeg",
+    "index.html": "/wanlibReactJS/index.html",
+    "main.8a0e8d1a.css.map": "/wanlibReactJS/static/css/main.8a0e8d1a.css.map",
+    "main.74664050.js.map": "/wanlibReactJS/static/js/main.74664050.js.map",
+    "787.7b25c85f.chunk.js.map": "/wanlibReactJS/static/js/787.7b25c85f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8a0e8d1a.css",
+    "static/js/main.74664050.js"
+  ]
+}
