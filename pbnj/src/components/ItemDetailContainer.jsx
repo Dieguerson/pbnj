@@ -30,8 +30,6 @@ export default function ItemDetailContainer({pokemonDetails, pokemonImage}) {
                     setType1(pokemonDetails.types[0].type.name);
                     setType2(pokemonDetails.types[0].type.name);
                 }
-                console.log(type1, type2)
-
                 switch (type1){
                     case "normal":
                         setGradientColor1("from-[#A8A878]");
@@ -152,7 +150,7 @@ export default function ItemDetailContainer({pokemonDetails, pokemonImage}) {
 
                 setArticleClasses(`flex flex-col items-center border-8 rounded-lg border-amber-300 w-72 h-min bg-gradient-to-br ${gradientColor1} ${gradientColor2}`)
             })).catch((err) => {
-                    console.log(err)
+                    console.error(err)
                 })
                     
     }, [pokemonDetails, type1, type2, gradientColor1, gradientColor2])

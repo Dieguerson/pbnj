@@ -15,7 +15,6 @@ export default function Item({name, imgUrl, singlePokemon}) {
     useEffect(() => {
         if(individual && individual.replace(":", "") === name){
             setRender(true)
-            console.log(render)
         }
     }, [individual])
     return (

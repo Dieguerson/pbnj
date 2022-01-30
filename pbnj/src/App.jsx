@@ -2,6 +2,7 @@ import './App.css';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import NavBar from './components/NavBar.jsx';
 import ItemListContainer from './components/ItemListContainer.jsx';
+import Cart from './components/Cart';
 
 function App() {
 
@@ -30,6 +31,10 @@ function App() {
           <Route path="/types/:typeName/:individual">
             <ItemListContainer message={message} classes={classes}/>
           </Route>
+          <Route exact path="/cart">
+            <Cart />
+          </Route>
+
           
         </Switch>
 

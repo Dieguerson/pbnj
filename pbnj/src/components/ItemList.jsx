@@ -24,7 +24,7 @@ export default function ItemList({pokemonList}) {
                             setTimeout(() => {setLoadedPokemons(true);}, 1500)
                         }
                     }).catch((err) => {
-                            console.log(err);
+                            console.error(err);
                         });
             })
         }else if (individual){
@@ -36,7 +36,7 @@ export default function ItemList({pokemonList}) {
                     setPokemons(loadingPokemon)
                     setTimeout(() => {setLoadedPokemons(true);}, 1500)
                 }).catch((err) => {
-                        console.log(err);
+                        console.error(err);
                     });
         }
     }, [pokemonList])

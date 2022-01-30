@@ -2,15 +2,15 @@ import React , { useState , useEffect } from "react";
 import { PlusCircleIcon } from '@heroicons/react/outline';
 import { MinusCircleIcon } from '@heroicons/react/outline';
 import { ShoppingCartIcon } from '@heroicons/react/outline';
+import { Link } from "react-router-dom";
 
-export default function ItemCount({stock , itemPrice , description}) {
+export default function ItemCount({stock , itemPrice , finishPurchase , onAdd}) {
 
     const [ammount , setAmmount] = useState(stock > 0 ? 1 : 0);
     const [price , setPrice] = useState(itemPrice);
 
     let sum;
     let subtract;
-    let onAdd;
 
     useEffect(() => {
         sum = () => {
@@ -27,13 +27,6 @@ export default function ItemCount({stock , itemPrice , description}) {
                 setPrice(itemPrice * (ammount - 1));
             }
         }
-        onAdd = () => {
-            if(ammount > 0){
-                alert(ammount + " units have been added to the cart!");
-            }else{
-                alert("There's nothing to add!");
-            }
-        }
     })
 
     return (
@@ -47,10 +40,16 @@ export default function ItemCount({stock , itemPrice , description}) {
                 </div>
                 <p className="w-full font-bold text-center mt-0">U$D {price}</p>
             </div>
-            <button className="flex bg-red-500 rounded-md w-20 mt-0 mb-2 shadow" onClick={() => onAdd()}>
-                <p className="m-auto font-bold">To Cart</p>
-                <ShoppingCartIcon className="m-auto w-4 h-6" />
-            </button>
+            {
+                finishPurchase
+                ?
+                <Link to={"/cart"} className="text-center bg-red-500 rounded-md w-20 mt-0 mb-2 shadow m-auto font-bold">Checkout</Link>
+                :
+                <button className="flex bg-red-500 rounded-md w-20 mt-0 mb-2 shadow" onClick={() => onAdd(ammount)}>
+                    <p className="m-auto font-bold">To Cart</p>
+                    <ShoppingCartIcon className="m-auto w-4 h-6" />
+                </button>
+            }
         </>
     );
 }
