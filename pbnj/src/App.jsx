@@ -20,7 +20,7 @@ function App() {
               <Redirect to="//wanlibReactJS" />
           </Route>
           <Route exact path="/types">
-              <Redirect to="//wanlibReactJS" />
+              <Redirect to="/wanlibReactJS" />
           </Route>
           <Route exact path="/wanlibReactJS">
             <ItemListContainer message={message} classes={classes}/>
