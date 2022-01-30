@@ -17,7 +17,7 @@ function App() {
 
         <Switch>
           <Route exact path="/">
-              <Redirect to="//wanlibReactJS" />
+              <Redirect to="/wanlibReactJS" />
           </Route>
           <Route exact path="/types">
               <Redirect to="/wanlibReactJS" />
