@@ -19,6 +19,9 @@ function App() {
           <Route exact path="/">
               <Redirect to="/wanlibReactJS" />
           </Route>
+          <Route exact path="/home">
+              <Redirect to="/wanlibReactJS" />
+          </Route>
           <Route exact path="/types">
               <Redirect to="/wanlibReactJS" />
           </Route>
