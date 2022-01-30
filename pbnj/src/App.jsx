@@ -22,6 +22,9 @@ function App() {
           <Route exact path="/types">
               <Redirect to="/home" />
           </Route>
+          <Route exact path="/wanlibReactJS">
+              <Redirect to="/home" />
+          </Route>
           <Route exact path="/home">
             <ItemListContainer message={message} classes={classes}/>
           </Route>
