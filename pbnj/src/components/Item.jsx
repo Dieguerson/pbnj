@@ -26,11 +26,11 @@ export default function Item({name, imgUrl, singlePokemon, fullRender}) {
                     </section>
                     {render
                         ?
-                        <NavLink className="flex items-center justify-center h-20 w-20 border-8 border-[#123E59] bg-white rounded-full absolute z-40" to={`/types/${typeName}`}>
+                        <NavLink className="flex items-center justify-center h-20 w-20 border-8 border-[#123E59] bg-white rounded-full absolute z-40" to={`/wanlibReactJS/types/${typeName}`}>
                             <button className="w-3/4 h-3/4 rounded-full bg-orange-500" onClick={() => openCard()}>INFO</button>
                         </NavLink>
                         :
-                        <NavLink className="flex justify-center items-center h-20 w-20 border-8 border-[#123E59] bg-white rounded-full absolute z-40" to={`/types/${typeName !== undefined ? typeName : singlePokemon?.types[0].type.name}/${name}`}>
+                        <NavLink className="flex justify-center items-center h-20 w-20 border-8 border-[#123E59] bg-white rounded-full absolute z-40" to={`/wanlibReactJS/types/${typeName !== undefined ? typeName : singlePokemon?.types[0].type.name}/${name}`}>
                             <button className="w-full h-full" onClick={() => openCard()}>INFO</button>
                         </NavLink>}
                     <section className="text-red-500 bg-white text-center font-bold rounded-b-full w-72 h-36 justify-self-end border-8 border-t-[12px] border-[#123E59]">
