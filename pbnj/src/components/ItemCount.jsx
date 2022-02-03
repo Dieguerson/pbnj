@@ -1,11 +1,13 @@
-import React , { useState , useEffect } from "react";
+import React , { useState , useEffect, useContext } from "react";
+import { cartContext } from './CartContext.jsx'
 import { PlusCircleIcon } from '@heroicons/react/outline';
 import { MinusCircleIcon } from '@heroicons/react/outline';
 import { ShoppingCartIcon } from '@heroicons/react/outline';
 import { Link } from "react-router-dom";
 
-export default function ItemCount({stock , itemPrice , finishPurchase , onAdd}) {
+export default function ItemCount({stock, itemPrice, name, number}) {
 
+    const {onAdd, finishPurchase} = useContext(cartContext)
     const [ammount , setAmmount] = useState(stock > 0 ? 1 : 0);
     const [price , setPrice] = useState(itemPrice);
 
@@ -45,7 +47,7 @@ export default function ItemCount({stock , itemPrice , finishPurchase , onAdd}) 
                 ?
                 <Link to={"/cart"} className="text-center bg-red-500 rounded-md w-20 mt-0 mb-2 shadow m-auto font-bold">Checkout</Link>
                 :
-                <button className="flex bg-red-500 rounded-md w-20 mt-0 mb-2 shadow" onClick={() => onAdd(ammount)}>
+                <button className="flex bg-red-500 rounded-md w-20 mt-0 mb-2 shadow" onClick={() => onAdd(ammount, name, price, number)}>
                     <p className="m-auto font-bold">To Cart</p>
                     <ShoppingCartIcon className="m-auto w-4 h-6" />
                 </button>

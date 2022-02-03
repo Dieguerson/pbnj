@@ -1,163 +1,146 @@
-import React , { useState , useEffect } from "react";
+import React from "react";
 import ItemDetail from "./ItemDetail";
-import axios from 'axios';
 
 export default function ItemDetailContainer({pokemonDetails, pokemonImage}) {
 
-    const [pokemonDescription, setPokemonDescription] = useState("");
-    const [type1, setType1] = useState("");
-    const [type2, setType2] = useState("");
-    const [gradientColor1, setGradientColor1] = useState("");
-    const [gradientColor2, setGradientColor2] = useState("");
-    const [articleClasses, setArticleClasses] = useState("");
+    let type1 = "";
+    let type2 = "";
+    let gradientColor1 = "";
+    let gradientColor2 = "";
+    let articleClasses = "";
+
+    if(pokemonDetails.types.length === 2){
+        type1 = pokemonDetails.types[0].type.name;
+        type2 = pokemonDetails.types[1].type.name;
+        console.log(pokemonDetails)
+    }else{
+        type1 = pokemonDetails.types[0].type.name;
+        type2 = pokemonDetails.types[0].type.name;
+    }
+    console.log(type1, type2)
+    switch (type1){
+        case "normal":
+            gradientColor1 = "from-[#A8A878]";
+            break;
+        case "fire":
+            gradientColor1 = "from-orange-400";
+            break;
+        case "water":
+            gradientColor1 = "from-blue-400";
+            break;
+        case "grass":
+            gradientColor1 = "from-lime-400";
+            break;
+        case "electric":
+            gradientColor1 = "from-amber-400";
+            break;
+        case "ice":
+            gradientColor1 = "from-emerald-200";
+            break;
+        case "fighting":
+            gradientColor1 = "from-red-700";
+            break;
+        case "poison":
+            gradientColor1 = "from-fuchsia-700";
+            break;
+        case "ground":
+            gradientColor1 = "from-orange-300";
+            break;
+        case "flying":
+            gradientColor1 = "from-purple-400";
+            break;
+        case "psychic":
+            gradientColor1 = "from-rose-400";
+            break;
+        case "bug":
+            gradientColor1 = "from-lime-500";
+            break;
+        case "rock":
+            gradientColor1 = "from-yellow-600";
+            break;
+        case "ghost":
+            gradientColor1 = "from-[#705898]";
+            break;
+        case "dark":
+            gradientColor1 = "from-warmGray-600";
+            break;
+        case "dragon":
+            gradientColor1 = "from-violet-600";
+            break;
+        case "steel":
+            gradientColor1 = "from-[#B8B8D0]";
+            break;
+        case "fairy":
+            gradientColor1 = "from-rose-300";
+            break;
+        default:
+            gradientColor1 = "from-[#0596A6]";
+    }
+
+    switch (type2){
+        case "normal":
+            gradientColor2 = "to-[#A8A878]";
+            break;
+        case "fire":
+            gradientColor2 = "to-orange-400";
+            break;
+        case "water":
+            gradientColor2 = "to-blue-400";
+            break;
+        case "grass":
+            gradientColor2 = "to-lime-400";
+            break;
+        case "electric":
+            gradientColor2 = "to-amber-400";
+            break;
+        case "ice":
+            gradientColor2 = "to-emerald-200";
+            break;
+        case "fighting":
+            gradientColor2 = "to-red-700";
+            break;
+        case "poison":
+            gradientColor2 = 'to-fuchsia-700';
+            break;
+        case "ground":
+            gradientColor2 = "to-orange-300";
+            break;
+        case "flying":
+            gradientColor2 = "to-purple-400";
+            break;
+        case "psychic":
+            gradientColor2 = "to-rose-400";
+            break;
+        case "bug":
+            gradientColor2 = "to-lime-500";
+            break;
+        case "rock":
+            gradientColor2 = "to-yellow-600";
+            break;
+        case "ghost":
+            gradientColor2 = "to-[#705898]";
+            break;
+        case "dark":
+            gradientColor2 = "to-warmGray-600";
+            break;
+        case "dragon":
+            gradientColor2 = "to-violet-600";
+            break;
+        case "steel":
+            gradientColor2 = "to-[#B8B8D0]";
+            break;
+        case "fairy":
+            gradientColor2 = "to-rose-300";
+            break;
+        default:
+            gradientColor2 = "to-[#0596A6]";
+    }
+
+    articleClasses = `flex flex-col items-center border-8 rounded-lg border-amber-300 w-72 h-min bg-gradient-to-br ${gradientColor1} ${gradientColor2}`
     
-    useEffect(() => {
-        
-        const characteristicsSearch = axios.get(pokemonDetails.species.url)
-        characteristicsSearch
-            .then((res => {
-                let fullDescription = ""
-                const englishDescription = res.data.flavor_text_entries.find(englishText => englishText.language.name === "en");
-                const textSplitter = englishDescription.flavor_text.split("\f");
-                textSplitter.forEach(fragment => fullDescription += " " + fragment);
-                fullDescription.trim();
-                setPokemonDescription(fullDescription)                
-                
-                if(pokemonDetails.types.length === 2){
-                    setType1(pokemonDetails.types[0].type.name);
-                    setType2(pokemonDetails.types[1].type.name);
-                }else{
-                    setType1(pokemonDetails.types[0].type.name);
-                    setType2(pokemonDetails.types[0].type.name);
-                }
-                switch (type1){
-                    case "normal":
-                        setGradientColor1("from-[#A8A878]");
-                        break;
-                    case "fire":
-                        setGradientColor1("from-orange-400");
-                        break;
-                    case "water":
-                        setGradientColor1("from-blue-400");
-                        break;
-                    case "grass":
-                        setGradientColor1("from-lime-400");
-                        break;
-                    case "electric":
-                        setGradientColor1("from-amber-400");
-                        break;
-                    case "ice":
-                        setGradientColor1("from-emerald-200");
-                        break;
-                    case "fighting":
-                        setGradientColor1("from-red-700");
-                        break;
-                    case "poison":
-                        setGradientColor1("from-fuchsia-700");
-                        break;
-                    case "ground":
-                        setGradientColor1("from-orange-300");
-                        break;
-                    case "flying":
-                        setGradientColor1("from-purple-400");
-                        break;
-                    case "psychic":
-                        setGradientColor1("from-rose-400");
-                        break;
-                    case "bug":
-                        setGradientColor1("from-lime-500");
-                        break;
-                    case "rock":
-                        setGradientColor1("from-yellow-600");
-                        break;
-                    case "ghost":
-                        setGradientColor1("from-[#705898]");
-                        break;
-                    case "dark":
-                        setGradientColor1("from-warmGray-600");
-                        break;
-                    case "dragon":
-                        setGradientColor1("from-violet-600");
-                        break;
-                    case "steel":
-                        setGradientColor1("from-[#B8B8D0]");
-                        break;
-                    case "fairy":
-                        setGradientColor1("from-rose-300");
-                        break;
-                    default:
-                        setGradientColor1("from-[#0596A6]");
-                }
-
-                switch (type2){
-                    case "normal":
-                        setGradientColor2("to-[#A8A878]");
-                        break;
-                    case "fire":
-                        setGradientColor2("to-orange-400");
-                        break;
-                    case "water":
-                        setGradientColor2("to-blue-400");
-                        break;
-                    case "grass":
-                        setGradientColor2("to-lime-400");
-                        break;
-                    case "electric":
-                        setGradientColor2("to-amber-400");
-                        break;
-                    case "ice":
-                        setGradientColor2("to-emerald-200");
-                        break;
-                    case "fighting":
-                        setGradientColor2("to-red-700");
-                        break;
-                    case "poison":
-                        setGradientColor2('to-fuchsia-700');
-                        break;
-                    case "ground":
-                        setGradientColor2("to-orange-300");
-                        break;
-                    case "flying":
-                        setGradientColor2("to-purple-400");
-                        break;
-                    case "psychic":
-                        setGradientColor2("to-rose-400");
-                        break;
-                    case "bug":
-                        setGradientColor2("to-lime-500");
-                        break;
-                    case "rock":
-                        setGradientColor2("to-yellow-600");
-                        break;
-                    case "ghost":
-                        setGradientColor2("to-[#705898]");
-                        break;
-                    case "dark":
-                        setGradientColor2("to-warmGray-600");
-                        break;
-                    case "dragon":
-                        setGradientColor2("to-violet-600");
-                        break;
-                    case "steel":
-                        setGradientColor2("to-[#B8B8D0]");
-                        break;
-                    case "fairy":
-                        setGradientColor2("to-rose-300");
-                        break;
-                    default:
-                        setGradientColor2("to-[#0596A6]");
-                }
-
-                setArticleClasses(`flex flex-col items-center border-8 rounded-lg border-amber-300 w-72 h-min bg-gradient-to-br ${gradientColor1} ${gradientColor2}`)
-            })).catch((err) => {
-                    console.error(err)
-                })
-                    
-    }, [pokemonDetails, type1, type2, gradientColor1, gradientColor2])
-
     return (
         <>
-            <ItemDetail pokemonDetails={pokemonDetails} pokemonImage={pokemonImage} pokemonDescription={pokemonDescription} articleClasses={articleClasses}/>
+            <ItemDetail pokemonDetails={pokemonDetails} pokemonImage={pokemonImage} articleClasses={articleClasses}/>
         </>
     );
 }
