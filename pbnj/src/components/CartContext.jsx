@@ -9,7 +9,6 @@ export default function CartContext({children}) {
     const [listCreated, setListCreated] = useState(false)
 
     const [pokemonCart, setPokemonCart] = useState([])
-    console.log(pokemonCart)
     const [finishPurchase, setFinishPurchase] = useState(false)
     
     const onAdd = (ammount, name, price, number) => {
@@ -20,7 +19,6 @@ export default function CartContext({children}) {
                 pokemonCart[place].ammount += ammount
                 pokemonCart[place].price += price * ammount
                 originalPokemonList[number - 1].stock -= ammount
-                console.log(pokemonCart)
             } else {
                     const newItem = {}
                     newItem.name = name
@@ -28,10 +26,8 @@ export default function CartContext({children}) {
                     newItem.unitPrice = price
                     newItem.price = price * ammount
                     originalPokemonList[number - 1].stock -= ammount
-                    console.log(originalPokemonList)
                     setPokemonCart([...pokemonCart, newItem])
                     setFinishPurchase(true);
-                    console.log(pokemonCart)
                     alert(ammount + " units have been added to the cart!");
                 }
         } else {

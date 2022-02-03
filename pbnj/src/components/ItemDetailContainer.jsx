@@ -12,12 +12,10 @@ export default function ItemDetailContainer({pokemonDetails, pokemonImage}) {
     if(pokemonDetails.types.length === 2){
         type1 = pokemonDetails.types[0].type.name;
         type2 = pokemonDetails.types[1].type.name;
-        console.log(pokemonDetails)
     }else{
         type1 = pokemonDetails.types[0].type.name;
         type2 = pokemonDetails.types[0].type.name;
     }
-    console.log(type1, type2)
     switch (type1){
         case "normal":
             gradientColor1 = "from-[#A8A878]";
