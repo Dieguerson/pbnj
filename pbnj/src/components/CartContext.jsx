@@ -12,6 +12,7 @@ export default function CartContext({children}) {
     const [finishPurchase, setFinishPurchase] = useState(false)
     
     const onAdd = (ammount, name, price, number) => {
+        console.log(originalPokemonList)
         if(ammount > 0){
             const checker = pokemonCart.find((pokemon) => pokemon.name === name)
             if (checker) {
@@ -20,6 +21,8 @@ export default function CartContext({children}) {
                 pokemonCart[place].price += price * ammount
                 originalPokemonList[number - 1].stock -= ammount
                 setFinishPurchase(true);
+                console.log(pokemonCart)
+                console.log(checker)
             } else {
                     const newItem = {}
                     newItem.name = name
@@ -29,6 +32,8 @@ export default function CartContext({children}) {
                     originalPokemonList[number - 1].stock -= ammount
                     setPokemonCart([...pokemonCart, newItem])
                     setFinishPurchase(true);
+                    console.log(pokemonCart)
+                    console.log(originalPokemonList[number - 1])
                     alert(ammount + " units have been added to the cart!");
                 }
         } else {
