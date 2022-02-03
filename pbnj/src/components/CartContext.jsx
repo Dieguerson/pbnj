@@ -19,6 +19,7 @@ export default function CartContext({children}) {
                 pokemonCart[place].ammount += ammount
                 pokemonCart[place].price += price * ammount
                 originalPokemonList[number - 1].stock -= ammount
+                setFinishPurchase(true);
             } else {
                     const newItem = {}
                     newItem.name = name
