@@ -90,7 +90,7 @@ export default function NavBar() {
                                 <NavLink className="visited:text-black mx-2 font-bold" to={"/hello"}>Contact</NavLink>
                             </li>
                             <li>
-                                <CartWidjet />
+                                <NavLink activeClassName="underline" className="visited:text-black mx-2 font-bold" to={"/wanlibReactJS/cart"}><CartWidjet /></NavLink>
                             </li>
                         </ul>
                     </section>

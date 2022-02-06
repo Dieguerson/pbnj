@@ -36,7 +36,7 @@ function App() {
             <Route path="/wanlibReactJS/types/:typeName/:individual">
               <ItemListContainer message={message} classes={classes}/>
             </Route>
-            <Route exact path="/cart">
+            <Route exact path="/wanlibReactJS/cart">
               <Cart />
             </Route>
 

@@ -15,6 +15,7 @@ export default function ItemCount({stock, itemPrice, name, number}) {
     let subtract;
 
     useEffect(() => {
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         sum = () => {
             if(ammount < stock){
                 setAmmount(ammount + 1);
@@ -23,6 +24,7 @@ export default function ItemCount({stock, itemPrice, name, number}) {
                 alert("Oops! Seems like our stock is a little short!");
             }
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         subtract = () => {
             if(ammount > 0){
                 setAmmount(ammount - 1);
@@ -47,8 +49,8 @@ export default function ItemCount({stock, itemPrice, name, number}) {
                 ?
                 <Link to={"/wanlibReactJS/cart"} className="text-center bg-red-500 rounded-md w-20 mt-0 mb-2 shadow m-auto font-bold">Checkout</Link>
                 :
-                <button className="flex bg-red-500 rounded-md w-20 mt-0 mb-2 shadow" onClick={() => onAdd(ammount, name, price, number)}>
-                    <p className="m-auto font-bold">To Cart</p>
+                <button className="flex bg-red-500 rounded-md w-28 mt-0 mb-2 shadow" onClick={() => onAdd(ammount, name, price, number)}>
+                    <p className="m-auto font-bold">Add To Cart</p>
                     <ShoppingCartIcon className="m-auto w-4 h-6" />
                 </button>
             }
