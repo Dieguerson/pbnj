@@ -9,9 +9,8 @@ export default function ItemList({pokemonList}) {
 
     return (
         <>
-            {listCreated ? 
+            {listCreated === true ? 
                 <>
-                    
                     <div className="grid grid-cols-3">
                         {pokemonList.map((pokemon) => {
                             return <Item name={pokemon.name} imgUrl={pokemon.sprite} singlePokemon={pokemon} key={pokemon.number} type1={pokemon.types[0]?.type.name} fullRender={true} />

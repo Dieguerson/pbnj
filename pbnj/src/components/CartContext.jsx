@@ -231,7 +231,7 @@ export default function CartContext({children}) {
                 let processedFlavor = ""
                 preProcessedFlavor.forEach(fragment => processedFlavor += " " + fragment)
                 pokemon.englishFlavor = processedFlavor.trim()
-                setListCreated(true)
+                setTimeout(() => setListCreated(true), 2000)
             })
         }
 

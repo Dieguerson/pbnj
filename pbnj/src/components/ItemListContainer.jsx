@@ -17,7 +17,7 @@ export default function ItemListContainer({message , classes}) {
             const typeFilter = originalPokemonList.filter((pokemon) => pokemon.types.find((type) => type.type.name === typeName))
             setTypeFilteredList(typeFilter)
         }
-    }, [typeName, individual, originalPokemonList, listCreated])
+    }, [typeName, individual])
     
 
     return (
