@@ -13,7 +13,7 @@ export default function ItemList({pokemonList}) {
                 <>
                     <div className="grid grid-cols-3">
                         {pokemonList.map((pokemon) => {
-                            return <Item name={pokemon.name} imgUrl={pokemon.sprite} singlePokemon={pokemon} key={pokemon.number} type1={pokemon.types[0]?.type.name} fullRender={true} />
+                            return <Item name={pokemon.name} imgUrl={pokemon.sprite} singlePokemon={pokemon} key={pokemon.number} type1={pokemon.type1} fullRender={true} />
                         })}
                     </div>
                 </>

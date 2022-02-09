@@ -1,4 +1,5 @@
 import React, { createContext, useEffect, useState } from "react";
+import { getFirestore } from "../firebase/firebase.js";
 import axios from 'axios';
 
 export const cartContext = createContext();
@@ -6,13 +7,49 @@ export const cartContext = createContext();
 export default function CartContext({children}) {
 
     const [originalPokemonList] = useState([])
+    const [pokemonListByType, setPokemonListByType] = useState([])
     const [listCreated, setListCreated] = useState(false)
     const [forceRender, setForceRender] = useState(false)
+    const fireStore = getFirestore()
 
     const [pokemonCart, setPokemonCart] = useState([])
     const [finishPurchase, setFinishPurchase] = useState(false)
 
+    const filterByType = async (type) => {
+        if (type !== undefined) {
+            setPokemonListByType([])
+            const firestoreByType =[]
+            const fireStoreFilterType1 = fireStore.collection("pokemonList").where("type1", "==", type)
+            const fireStoreFilterType2 = fireStore.collection("pokemonList").where("type2", "==", type)
+            await fireStoreFilterType1.get().then((querySnapshot) => {
+                querySnapshot.docs.map(doc => firestoreByType.push(doc.data()))
+            })
+            await fireStoreFilterType2.get().then((querySnapshot) => {
+                querySnapshot.docs.map(doc => firestoreByType.push(doc.data()))
+            })
+            sortingService(firestoreByType)
+            setPokemonListByType(firestoreByType)
+            console.log("byType", firestoreByType)
+        }
+    }
+
+    const sortingService = (disorderedArray) => {
+        disorderedArray.sort(function (a, b) {
+            if (a.number > b.number) {
+                return 1;
+            }
+            if (a.number < b.number) {
+                return -1;
+            }
+            return 0
+        })
+    }
+
     const getBgGradient = (type1, type2) => {
+        
+        if (type2 === null) {
+            type2 = type1
+        }
         
         let gradientColor1 = "";
         let gradientColor2 = "";
@@ -195,53 +232,19 @@ export default function CartContext({children}) {
         }
         setForceRender(!forceRender)
     }
-        
-    useEffect(() => {
-        const componentWillMount = async () => {
-            const firstGenPokemon = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=151');
-    
-            firstGenPokemon.data.results.forEach((pokemonPrimer) => {
-                originalPokemonList.push(pokemonPrimer)
-            })
-    
-            originalPokemonList.forEach(async (pokemon) => {
-                const pokemonDetails = await axios.get(pokemon.url)
-    
-                if (pokemon.name === "farfetchd") {
-                    pokemon.name = "farfetch'd"
-                }
-    
-                if (pokemon.name === "nidoran-f") {
-                    pokemon.name = "nidoran"
-                }
-    
-                if (pokemon.name === "nidoran-m") {
-                    pokemon.name = "nidoran"
-                }
-    
-                pokemon.number = pokemonDetails.data.id
-                pokemon.speciesUrl = pokemonDetails.data.species.url
-                pokemon.sprite = pokemonDetails.data.sprites.other['official-artwork'].front_default
-                pokemon.types = pokemonDetails.data.types
-                pokemon.stock = parseInt(pokemonDetails.data.id + 50 / 33.56)
-                pokemon.price = parseInt(pokemonDetails.data.id + 100 / 9.16)
-    
-                const pokemonFlavor = await axios.get(pokemon.speciesUrl)
-                const preProcessedFlavor = pokemonFlavor.data.flavor_text_entries.find((flavorText) => flavorText.language.name === "en").flavor_text.split("\f")
-                let processedFlavor = ""
-                preProcessedFlavor.forEach(fragment => processedFlavor += " " + fragment)
-                pokemon.englishFlavor = processedFlavor.trim()
-                setTimeout(() => setListCreated(true), 2000)
-            })
-        }
 
-        componentWillMount()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    useEffect(() => {
+        fireStore.collection("pokemonList").get().then((querySnapshot) => {
+            querySnapshot.docs.map(doc => originalPokemonList.push(doc.data()))
+            sortingService(originalPokemonList)
+            console.log(originalPokemonList)
+            setListCreated(true)
+        })
     }, [])
 
     return (
         <>
-            <cartContext.Provider value={{originalPokemonList, listCreated, onAdd, onRemove, finishPurchase, setFinishPurchase, pokemonCart, getBgGradient, getTypes, forceRender}}>
+            <cartContext.Provider value={{originalPokemonList, listCreated, onAdd, onRemove, finishPurchase, setFinishPurchase, pokemonCart, getBgGradient, getTypes, forceRender, filterByType, pokemonListByType}}>
                 {children}
             </cartContext.Provider>
         </>

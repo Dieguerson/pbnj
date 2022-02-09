@@ -22,63 +22,63 @@ export default function NavBar() {
                                 <NavLink activeClassName="underline" className="visited:text-black mx-2 font-bold" to={"/types"}>Types</NavLink>
                                 <ul className="bg-[#F2778D]">
                                     <li>
-                                        <NavLink activeClassName="underline" className="visited:text-black whitespace-nowrap m-2" to={"/wanlibReactJS/types/normal"}>- Normal</NavLink>
+                                        <NavLink activeClassName="underline" className="visited:text-black whitespace-nowrap m-2" to={"/pbnj/types/normal"}>- Normal</NavLink>
                                     </li>
                                     <li><hr className="border border-[#123E59] w-100 mx-4" /></li>
                                     <li>
-                                        <NavLink activeClassName="underline" className="visited:text-black whitespace-nowrap m-2" to={"/wanlibReactJS/types/fire"}>- Fire</NavLink>
+                                        <NavLink activeClassName="underline" className="visited:text-black whitespace-nowrap m-2" to={"/pbnj/types/fire"}>- Fire</NavLink>
                                     </li>
                                     <li><hr className="border border-[#123E59] w-100 mx-4" /></li>
                                     <li>
-                                        <NavLink activeClassName="underline" className="visited:text-black whitespace-nowrap m-2" to={"/wanlibReactJS/types/water"}>- Water</NavLink>
+                                        <NavLink activeClassName="underline" className="visited:text-black whitespace-nowrap m-2" to={"/pbnj/types/water"}>- Water</NavLink>
                                     </li>
                                     <li><hr className="border border-[#123E59] w-100 mx-4" /></li>
                                     <li>
-                                        <NavLink activeClassName="underline" className="visited:text-black whitespace-nowrap m-2" to={"/wanlibReactJS/types/grass"}>- Grass</NavLink>
+                                        <NavLink activeClassName="underline" className="visited:text-black whitespace-nowrap m-2" to={"/pbnj/types/grass"}>- Grass</NavLink>
                                     </li>
                                     <li><hr className="border border-[#123E59] w-100 mx-4" /></li>
                                     <li>
-                                        <NavLink activeClassName="underline" className="visited:text-black whitespace-nowrap m-2" to={"/wanlibReactJS/types/electric"}>- Electric</NavLink>
+                                        <NavLink activeClassName="underline" className="visited:text-black whitespace-nowrap m-2" to={"/pbnj/types/electric"}>- Electric</NavLink>
                                     </li>
                                     <li><hr className="border border-[#123E59] w-100 mx-4" /></li>
                                     <li>
-                                        <NavLink activeClassName="underline" className="visited:text-black whitespace-nowrap m-2" to={"/wanlibReactJS/types/ice"}>- Ice</NavLink>
+                                        <NavLink activeClassName="underline" className="visited:text-black whitespace-nowrap m-2" to={"/pbnj/types/ice"}>- Ice</NavLink>
                                     </li>
                                     <li><hr className="border border-[#123E59] w-100 mx-4" /></li>
                                     <li>
-                                        <NavLink activeClassName="underline" className="visited:text-black whitespace-nowrap m-2" to={"/wanlibReactJS/types/fighting"}>- Fighting</NavLink>
+                                        <NavLink activeClassName="underline" className="visited:text-black whitespace-nowrap m-2" to={"/pbnj/types/fighting"}>- Fighting</NavLink>
                                     </li>
                                     <li><hr className="border border-[#123E59] w-100 mx-4" /></li>
                                     <li>
-                                        <NavLink activeClassName="underline" className="visited:text-black whitespace-nowrap m-2" to={"/wanlibReactJS/types/poison"}>- Poison</NavLink>
+                                        <NavLink activeClassName="underline" className="visited:text-black whitespace-nowrap m-2" to={"/pbnj/types/poison"}>- Poison</NavLink>
                                     </li>
                                     <li><hr className="border border-[#123E59] w-100 mx-4" /></li>
                                     <li>
-                                        <NavLink activeClassName="underline" className="visited:text-black whitespace-nowrap m-2" to={"/wanlibReactJS/types/ground"}>- Ground</NavLink>
+                                        <NavLink activeClassName="underline" className="visited:text-black whitespace-nowrap m-2" to={"/pbnj/types/ground"}>- Ground</NavLink>
                                     </li>
                                     <li><hr className="border border-[#123E59] w-100 mx-4" /></li>
                                     <li>
-                                        <NavLink activeClassName="underline" className="visited:text-black whitespace-nowrap m-2" to={"/wanlibReactJS/types/flying"}>- Flying</NavLink>
+                                        <NavLink activeClassName="underline" className="visited:text-black whitespace-nowrap m-2" to={"/pbnj/types/flying"}>- Flying</NavLink>
                                     </li>
                                     <li><hr className="border border-[#123E59] w-100 mx-4" /></li>
                                     <li>
-                                        <NavLink activeClassName="underline" className="visited:text-black whitespace-nowrap m-2" to={"/wanlibReactJS/types/psychic"}>- Psychic</NavLink>
+                                        <NavLink activeClassName="underline" className="visited:text-black whitespace-nowrap m-2" to={"/pbnj/types/psychic"}>- Psychic</NavLink>
                                     </li>
                                     <li><hr className="border border-[#123E59] w-100 mx-4" /></li>
                                     <li>
-                                        <NavLink activeClassName="underline" className="visited:text-black whitespace-nowrap m-2" to={"/wanlibReactJS/types/bug"}>- Bug</NavLink>
+                                        <NavLink activeClassName="underline" className="visited:text-black whitespace-nowrap m-2" to={"/pbnj/types/bug"}>- Bug</NavLink>
                                     </li>
                                     <li><hr className="border border-[#123E59] w-100 mx-4" /></li>
                                     <li>
-                                        <NavLink activeClassName="underline" className="visited:text-black whitespace-nowrap m-2" to={"/wanlibReactJS/types/rock"}>- Rock</NavLink>
+                                        <NavLink activeClassName="underline" className="visited:text-black whitespace-nowrap m-2" to={"/pbnj/types/rock"}>- Rock</NavLink>
                                     </li>
                                     <li><hr className="border border-[#123E59] w-100 mx-4" /></li>
                                     <li>
-                                        <NavLink activeClassName="underline" className="visited:text-black whitespace-nowrap m-2" to={"/wanlibReactJS/types/ghost"}>- Ghost</NavLink>
+                                        <NavLink activeClassName="underline" className="visited:text-black whitespace-nowrap m-2" to={"/pbnj/types/ghost"}>- Ghost</NavLink>
                                     </li>
                                     <li><hr className="border border-[#123E59] w-100 mx-4" /></li>
                                     <li>
-                                        <NavLink activeClassName="underline" className="visited:text-black whitespace-nowrap m-2" to={"/wanlibReactJS/types/dragon"}>- Dragon</NavLink>
+                                        <NavLink activeClassName="underline" className="visited:text-black whitespace-nowrap m-2" to={"/pbnj/types/dragon"}>- Dragon</NavLink>
                                     </li>
                                     
                                 </ul>
@@ -90,7 +90,7 @@ export default function NavBar() {
                                 <NavLink className="visited:text-black mx-2 font-bold" to={"/hello"}>Contact</NavLink>
                             </li>
                             <li>
-                                <NavLink activeClassName="underline" className="visited:text-black mx-2 font-bold" to={"/wanlibReactJS/cart"}><CartWidjet /></NavLink>
+                                <NavLink activeClassName="underline" className="visited:text-black mx-2 font-bold" to={"/pbnj/cart"}><CartWidjet /></NavLink>
                             </li>
                         </ul>
                     </section>

@@ -1,7 +1,7 @@
 {
   "name": "pbnj",
   "version": "0.1.0",
-  "homepage": "https://dieguerson.github.io/wanlibReactJS",
+  "homepage": "https://dieguerson.github.io/pbnj",
   "private": true,
   "dependencies": {
     "@heroicons/react": "^1.0.5",

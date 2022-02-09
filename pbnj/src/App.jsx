@@ -19,24 +19,27 @@ function App() {
 
           <Switch>
             <Route exact path="/">
-                <Redirect to="/wanlibReactJS" />
+                <Redirect to="/pbnj" />
             </Route>
             <Route exact path="/home">
-                <Redirect to="/wanlibReactJS" />
+                <Redirect to="/pbnj" />
             </Route>
             <Route exact path="/types">
-                <Redirect to="/wanlibReactJS" />
+                <Redirect to="/pbnj" />
             </Route>
-            <Route exact path="/wanlibReactJS">
+            <Route exact path="/pbnj">
               <ItemListContainer message={message} classes={classes}/>
             </Route>
-            <Route exact path="/wanlibReactJS/types/:typeName">
+            <Route exact path="/pbnj/types/:typeName">
               <ItemListContainer message={message} classes={classes}/>
             </Route>
-            <Route path="/wanlibReactJS/types/:typeName/:individual">
+            <Route exact path="/pbnj/:individual">
               <ItemListContainer message={message} classes={classes}/>
             </Route>
-            <Route exact path="/wanlibReactJS/cart">
+            <Route path="/pbnj/types/:typeName/:individual">
+              <ItemListContainer message={message} classes={classes}/>
+            </Route>
+            <Route exact path="/pbnj/cart">
               <Cart />
             </Route>
 

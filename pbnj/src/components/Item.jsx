@@ -7,11 +7,15 @@ import ItemDetailContainer from './ItemDetailContainer';
 export default function Item({name, imgUrl, singlePokemon, fullRender}) {
     
     const {setFinishPurchase} = useContext(cartContext)
-    const {typeName} = useParams()
+    const {typeName, individual} = useParams()
     const pokemonDetails = singlePokemon
     const pokemonImage = imgUrl
     const [render, setRender] = useState(false);
+    const [origin, setOrigin] = useState(false)
     const openCard = () => {
+        if (typeName !== undefined) {
+            setOrigin(!origin)
+        }
         setRender(render ? false : true)
         setFinishPurchase(false)
     }
@@ -24,13 +28,19 @@ export default function Item({name, imgUrl, singlePokemon, fullRender}) {
                     <section className="bg-red-500 rounded-t-full w-72 h-36 justify-self-start border-8 border-b-[12px] border-[#123E59]">
                         <img src={imgUrl || LoadImg} className={fullRender ? "max-w-64 max-h-28 mx-auto mt-3" : "rounded-t-full max-w-64 max-h-28 mx-auto mt-3" } alt={name || "Loading"} />
                     </section>
-                    {render
+                    {typeName === undefined
+                    ?
+                    <NavLink className="flex items-center justify-center h-20 w-20 border-8 border-[#123E59] bg-white rounded-full absolute z-40" to={`/pbnj/${individual ? "" : name}`}>
+                            <button className="w-3/4 h-3/4 rounded-full" onClick={() => openCard()}>INFO</button>
+                    </NavLink>
+                    :
+                    origin
                         ?
-                        <NavLink className="flex items-center justify-center h-20 w-20 border-8 border-[#123E59] bg-white rounded-full absolute z-40" to={`/wanlibReactJS/types/${typeName}`}>
+                        <NavLink className="flex items-center justify-center h-20 w-20 border-8 border-[#123E59] bg-white rounded-full absolute z-40" to={`/pbnj/types/${typeName}`}>
                             <button className="w-3/4 h-3/4 rounded-full bg-orange-500" onClick={() => openCard()}>INFO</button>
                         </NavLink>
                         :
-                        <NavLink className="flex justify-center items-center h-20 w-20 border-8 border-[#123E59] bg-white rounded-full absolute z-40" to={`/wanlibReactJS/types/${typeName !== undefined ? typeName : singlePokemon?.types[0].type.name}/${name}`}>
+                        <NavLink className="flex justify-center items-center h-20 w-20 border-8 border-[#123E59] bg-white rounded-full absolute z-40" to={`/pbnj/types/${typeName !== undefined ? typeName : singlePokemon?.type1}/${name}`}>
                             <button className="w-full h-full" onClick={() => openCard()}>INFO</button>
                         </NavLink>}
                     <section className="text-red-500 bg-white text-center font-bold rounded-b-full w-72 h-36 justify-self-end border-8 border-t-[12px] border-[#123E59]">

@@ -47,7 +47,7 @@ export default function ItemCount({stock, itemPrice, name, number}) {
             {
                 finishPurchase
                 ?
-                <Link to={"/wanlibReactJS/cart"} className="text-center bg-red-500 rounded-md w-20 mt-0 mb-2 shadow m-auto font-bold">Checkout</Link>
+                <Link to={"/pbnj/cart"} className="text-center bg-red-500 rounded-md w-20 mt-0 mb-2 shadow m-auto font-bold">Checkout</Link>
                 :
                 <button className="flex bg-red-500 rounded-md w-28 mt-0 mb-2 shadow" onClick={() => onAdd(ammount, name, price, number)}>
                     <p className="m-auto font-bold">Add To Cart</p>
