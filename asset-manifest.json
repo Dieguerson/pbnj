@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/wanlibReactJS/static/css/main.62b82a0e.css",
-    "main.js": "/wanlibReactJS/static/js/main.08ec235a.js",
-    "static/js/787.7b25c85f.chunk.js": "/wanlibReactJS/static/js/787.7b25c85f.chunk.js",
-    "static/media/pb&j.png": "/wanlibReactJS/static/media/pb&j.92ddfb8a28276b85db49.png",
-    "static/media/pb&jpokeball.png": "/wanlibReactJS/static/media/pb&jpokeball.a23ed8ea9beb570f0ba9.png",
-    "static/media/loading.jpeg": "/wanlibReactJS/static/media/loading.cc881f4032046327c5d2.jpeg",
-    "index.html": "/wanlibReactJS/index.html",
-    "main.62b82a0e.css.map": "/wanlibReactJS/static/css/main.62b82a0e.css.map",
-    "main.08ec235a.js.map": "/wanlibReactJS/static/js/main.08ec235a.js.map",
-    "787.7b25c85f.chunk.js.map": "/wanlibReactJS/static/js/787.7b25c85f.chunk.js.map"
+    "main.css": "/pbnj/static/css/main.17f99a0e.css",
+    "main.js": "/pbnj/static/js/main.460bacfd.js",
+    "static/js/787.7b25c85f.chunk.js": "/pbnj/static/js/787.7b25c85f.chunk.js",
+    "static/media/pb&j.png": "/pbnj/static/media/pb&j.92ddfb8a28276b85db49.png",
+    "static/media/pb&jpokeball.png": "/pbnj/static/media/pb&jpokeball.a23ed8ea9beb570f0ba9.png",
+    "static/media/loading.jpeg": "/pbnj/static/media/loading.cc881f4032046327c5d2.jpeg",
+    "index.html": "/pbnj/index.html",
+    "main.17f99a0e.css.map": "/pbnj/static/css/main.17f99a0e.css.map",
+    "main.460bacfd.js.map": "/pbnj/static/js/main.460bacfd.js.map",
+    "787.7b25c85f.chunk.js.map": "/pbnj/static/js/787.7b25c85f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.62b82a0e.css",
-    "static/js/main.08ec235a.js"
+    "static/css/main.17f99a0e.css",
+    "static/js/main.460bacfd.js"
   ]
 }
