@@ -29,8 +29,8 @@ export default function Cart() {
                             <h3 className="w-full text-center capitalize font-bold text-2xl">{soldPokemon.name}</h3>
                             <img src={soldPokemon.sprite} className="h-fit" alt={soldPokemon.name}/>
                             <p>Total in Cart: <b>{soldPokemon.ammount}</b></p>
-                            <p>Unit Price: <b>{soldPokemon.unitPrice}</b> </p>
-                            <p>Total Price: <b>{soldPokemon.price}</b> </p>
+                            <p>Unit Price: U$D <b>{soldPokemon.unitPrice}</b> </p>
+                            <p>Total Price: U$D <b>{soldPokemon.price}</b> </p>
                             <div className="flex flex-row">
                                 <button className="flex bg-red-500 rounded-md w-20 m-2 shadow" onClick={() => onRemove(1, soldPokemon.number)}>
                                     <p className="m-auto font-bold">Remove One</p>
@@ -47,7 +47,7 @@ export default function Cart() {
             </section>
             {pokemonCart.length > 0
             ?
-                <p className="text-center mt-5 text-2xl">Total: <b>{cartTotal}</b></p>
+                <p className="text-center mt-5 text-2xl">Total: U$D <b>{cartTotal}</b></p>
             :
             null
             }

@@ -84,12 +84,6 @@ export default function NavBar() {
                                 </ul>
                             </li>
                             <li>
-                                <NavLink className="visited:text-black mx-2 whitespace-nowrap font-bold" to={"/hello"}>About Us</NavLink>
-                            </li>
-                            <li>
-                                <NavLink className="visited:text-black mx-2 font-bold" to={"/hello"}>Contact</NavLink>
-                            </li>
-                            <li>
                                 <NavLink activeClassName="underline" className="visited:text-black mx-2 font-bold" to={"/pbnj/cart"}><CartWidjet /></NavLink>
                             </li>
                         </ul>
