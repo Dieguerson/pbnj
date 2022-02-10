@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/pbnj/static/css/main.d5133454.css",
-    "main.js": "/pbnj/static/js/main.d1afb738.js",
+    "main.js": "/pbnj/static/js/main.ed202368.js",
     "static/js/787.7b25c85f.chunk.js": "/pbnj/static/js/787.7b25c85f.chunk.js",
     "static/media/pb&j.png": "/pbnj/static/media/pb&j.92ddfb8a28276b85db49.png",
     "static/media/pb&jpokeball.png": "/pbnj/static/media/pb&jpokeball.a23ed8ea9beb570f0ba9.png",
     "static/media/loading.jpeg": "/pbnj/static/media/loading.cc881f4032046327c5d2.jpeg",
     "index.html": "/pbnj/index.html",
     "main.d5133454.css.map": "/pbnj/static/css/main.d5133454.css.map",
-    "main.d1afb738.js.map": "/pbnj/static/js/main.d1afb738.js.map",
+    "main.ed202368.js.map": "/pbnj/static/js/main.ed202368.js.map",
     "787.7b25c85f.chunk.js.map": "/pbnj/static/js/787.7b25c85f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d5133454.css",
-    "static/js/main.d1afb738.js"
+    "static/js/main.ed202368.js"
   ]
 }
