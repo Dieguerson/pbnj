@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { cartContext } from './CartContext.jsx'
 import { NavLink, useParams } from 'react-router-dom'
 import LoadImg from '../img/loading.jpeg';
@@ -6,7 +6,7 @@ import ItemDetailContainer from './ItemDetailContainer';
 
 export default function Item({name, imgUrl, singlePokemon, fullRender}) {
     
-    const {setFinishPurchase} = useContext(cartContext)
+    const {setFinishPurchase, open} = useContext(cartContext)
     const {typeName, individual} = useParams()
     const pokemonDetails = singlePokemon
     const pokemonImage = imgUrl
@@ -19,24 +19,32 @@ export default function Item({name, imgUrl, singlePokemon, fullRender}) {
         setRender(render ? false : true)
         setFinishPurchase(false)
     }
+
+    useEffect(() => {
+        setRender(false)
+        if(name === individual){
+            setRender(true)
+            console.log(render)
+        }
+    }, [])
     
 
     return (
         <>
-            <article className="mt-4">
+            <article className="mt-4 col-span-3 lg:col-span-1">
                 <div className="w-72 h-72 m-auto flex flex-col items-center justify-center">
                     <section className="bg-red-500 rounded-t-full w-72 h-36 justify-self-start border-8 border-b-[12px] border-[#123E59]">
                         <img src={imgUrl || LoadImg} className={fullRender ? "max-w-64 max-h-28 mx-auto mt-3" : "rounded-t-full max-w-64 max-h-28 mx-auto mt-3" } alt={name || "Loading"} />
                     </section>
-                    {typeName === undefined
+                    {typeName === undefined || individual !== undefined
                     ?
-                    <NavLink className="flex items-center justify-center h-20 w-20 border-8 border-[#123E59] bg-white rounded-full absolute z-40" to={`/pbnj/${individual ? "" : name}`}>
-                            <button className="w-3/4 h-3/4 rounded-full" onClick={() => openCard()}>INFO</button>
+                    <NavLink className="flex items-center justify-center h-20 w-20 border-8 border-[#123E59] bg-white rounded-full absolute z-40" to={`/pbnj/${typeName !== undefined ? "types/" + typeName + "/" : individual ? "" : name}`}>
+                            <button className={`w-3/4 h-3/4 rounded-full ${render ? 'bg-orange-500' : null}`} onClick={() => openCard()}>INFO</button>
                     </NavLink>
                     :
                     origin
                         ?
-                        <NavLink className="flex items-center justify-center h-20 w-20 border-8 border-[#123E59] bg-white rounded-full absolute z-40" to={`/pbnj/types/${typeName}`}>
+                        <NavLink className="flex items-center justify-center h-20 w-20 border-8 border-[#123E59] bg-white rounded-full absolute z-40" to={`/pbnj/types/${typeName !== undefined ? typeName : singlePokemon?.type1}/${individual !== undefined ? individual : ""}`}>
                             <button className="w-3/4 h-3/4 rounded-full bg-orange-500" onClick={() => openCard()}>INFO</button>
                         </NavLink>
                         :

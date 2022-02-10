@@ -8,6 +8,8 @@ export default function CartContext({children}) {
 
     const [originalPokemonList] = useState([])
     const [pokemonListByType, setPokemonListByType] = useState([])
+    const [pokemonListByIndividual, setPokemonListByIndividual] = useState([])
+    const [open, setOpen] = useState(false)
     const [listCreated, setListCreated] = useState(false)
     const [forceRender, setForceRender] = useState(false)
     const fireStore = getFirestore()
@@ -29,7 +31,21 @@ export default function CartContext({children}) {
             })
             sortingService(firestoreByType)
             setPokemonListByType(firestoreByType)
-            console.log("byType", firestoreByType)
+        }
+    }
+    
+    const filterByIndividual = async (individual) => {
+        if (individual !== undefined) {
+            setPokemonListByIndividual([])
+            const firestoreByIndividual =[]
+            const fireStoreFilterIndividual = fireStore.collection("pokemonList").where("name", "==", individual)
+            await fireStoreFilterIndividual.get().then((querySnapshot) => {
+                querySnapshot.docs.map(doc => firestoreByIndividual.push(doc.data()))
+            })
+            sortingService(firestoreByIndividual)
+            setPokemonListByIndividual(firestoreByIndividual)
+            setOpen(true)
+            setTimeout(() => setOpen(false), 2000)
         }
     }
 
@@ -171,7 +187,6 @@ export default function CartContext({children}) {
             default:
                 gradientColor2 = "to-[#0596A6]";
         }
-        console.log("holi")
 
         return (gradientColor1 + " " + gradientColor2)
     }
@@ -189,7 +204,6 @@ export default function CartContext({children}) {
     }
     
     const onAdd = (ammount, name, price, number) => {
-        console.log(originalPokemonList)
         if(ammount > 0){
             const checker = pokemonCart.find((pokemon) => pokemon.name === name)
             if (checker) {
@@ -201,15 +215,15 @@ export default function CartContext({children}) {
             } else {
                 const originalPokemon = originalPokemonList[number - 1]
                 const newItem = {}
-                const typification = getTypes(originalPokemon)
                 newItem.name = name
                 newItem.number = number
                 newItem.ammount = ammount
                 newItem.unitPrice = price
                 newItem.price = price * ammount
                 newItem.sprite = originalPokemon.sprite
-                newItem.types = originalPokemon.types
-                newItem.bgGradient = getBgGradient(typification[0], typification[1])
+                newItem.type1 = originalPokemon.type1
+                newItem.type2 = originalPokemon.type2
+                newItem.bgGradient = getBgGradient(newItem.type1, newItem.type2)
                 originalPokemon.stock -= ammount
                 setPokemonCart([...pokemonCart, newItem])
                 setFinishPurchase(true);
@@ -237,14 +251,13 @@ export default function CartContext({children}) {
         fireStore.collection("pokemonList").get().then((querySnapshot) => {
             querySnapshot.docs.map(doc => originalPokemonList.push(doc.data()))
             sortingService(originalPokemonList)
-            console.log(originalPokemonList)
             setListCreated(true)
         })
     }, [])
 
     return (
         <>
-            <cartContext.Provider value={{originalPokemonList, listCreated, onAdd, onRemove, finishPurchase, setFinishPurchase, pokemonCart, getBgGradient, getTypes, forceRender, filterByType, pokemonListByType}}>
+            <cartContext.Provider value={{originalPokemonList, listCreated, onAdd, onRemove, finishPurchase, setFinishPurchase, pokemonCart, getBgGradient, getTypes, forceRender, filterByType, pokemonListByType, pokemonListByIndividual, filterByIndividual, open}}>
                 {children}
             </cartContext.Provider>
         </>

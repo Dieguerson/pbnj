@@ -27,6 +27,9 @@ function App() {
             <Route exact path="/types">
                 <Redirect to="/pbnj" />
             </Route>
+            <Route exact path="/pbnj/cart">
+              <Cart />
+            </Route>
             <Route exact path="/pbnj">
               <ItemListContainer message={message} classes={classes}/>
             </Route>
@@ -36,11 +39,11 @@ function App() {
             <Route exact path="/pbnj/:individual">
               <ItemListContainer message={message} classes={classes}/>
             </Route>
-            <Route path="/pbnj/types/:typeName/:individual">
+            <Route exact path="/pbnj/types/:typeName/:individual">
               <ItemListContainer message={message} classes={classes}/>
             </Route>
-            <Route exact path="/pbnj/cart">
-              <Cart />
+            <Route exact path="/cart">
+                <Redirect to="/pbnj/cart" />
             </Route>
 
             

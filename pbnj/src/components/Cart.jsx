@@ -21,7 +21,7 @@ export default function Cart() {
         <>
         
             <h1 className="text-2xl font-bold text-center my-4">Welcome to your Cart!</h1>
-            <section className="flex justify-center">
+            <section className="flex flex-wrap justify-center">
                 {pokemonCart.length > 0
                 ?
                     pokemonCart.map(soldPokemon => 

@@ -16,7 +16,7 @@ export default function ItemDetail({pokemonDetails, pokemonImage}) {
                 <p className="w-full ml-4"><b>Type 1:</b> <em className="capitalize">{pokemonDetails.type1}</em></p>
                 {pokemonDetails.type2 !== null
                 ?
-                <p className="w-full ml-4"><b>Type 1:</b> <em className="capitalize">{pokemonDetails.type1}</em></p>
+                <p className="w-full ml-4"><b>Type 2:</b> <em className="capitalize">{pokemonDetails.type2}</em></p>
                 :
                 null
                 }

@@ -6,6 +6,7 @@ import Item from './Item';
 export default function ItemList({pokemonList}) {
 
     const {listCreated} = useContext(cartContext)
+    console.log(pokemonList)
 
     return (
         <>

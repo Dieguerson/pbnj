@@ -5,18 +5,30 @@ import ItemList from "./ItemList";
 
 export default function ItemListContainer({message , classes}) {
     
-    const {originalPokemonList, filterByType, pokemonListByType} = useContext(cartContext)
-    const {typeName} = useParams()
+    const {originalPokemonList, filterByType, pokemonListByType, filterByIndividual, pokemonListByIndividual} = useContext(cartContext)
+    const {typeName, individual} = useParams()
     
     useEffect(() => {
-        filterByType(typeName)
-    }, [typeName])
+        if (typeName !== undefined && individual === undefined) {
+            filterByType(typeName)
+            console.log("no holi")
+        }
+        if(typeName === undefined && individual !== undefined) {
+            filterByIndividual(individual)
+            console.log("holi")
+        }
+        if(typeName !== undefined && individual !== undefined){
+            filterByType(typeName)
+            filterByIndividual(individual)
+            console.log("re holi")
+        }
+    }, [typeName, individual])
     
 
     return (
         <>
             <h1 className={classes}>{message}</h1>
-            <ItemList pokemonList={typeName === undefined ? originalPokemonList : pokemonListByType} />
+            <ItemList pokemonList={typeName === undefined ? individual === undefined ? originalPokemonList : pokemonListByIndividual : individual !== undefined ? pokemonListByIndividual : pokemonListByType} />
         </>
     );
 }
