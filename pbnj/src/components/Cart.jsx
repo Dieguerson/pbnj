@@ -1,11 +1,23 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState, useRef } from "react";
 import { cartContext } from './CartContext.jsx'
 import { Link } from 'react-router-dom'
 
 export default function Cart() {
 
-    const {pokemonCart, onRemove, forceRender} = useContext(cartContext)
+    const {pokemonCart, onRemove, forceRender, onFinishPurchase, purchaseId} = useContext(cartContext)
     const [cartTotal, setCartTotal] = useState(0)
+    const nameRef = useRef();
+    const mailRef = useRef();
+    const phoneRef = useRef();
+
+    const userCreation = (e) => {
+        e.preventDefault()
+        const buyer = {}
+        buyer.name = nameRef.current.value;
+        buyer.mail = mailRef.current.value;
+        buyer.phone = phoneRef.current.value;
+        onFinishPurchase(buyer)
+    }
 
     useEffect(() => {
         const newTotal = () => {
@@ -47,10 +59,23 @@ export default function Cart() {
             </section>
             {pokemonCart.length > 0
             ?
-                <p className="text-center mt-5 text-2xl">Total: U$D <b>{cartTotal}</b></p>
+                <>
+                    <p className="text-center mt-5 text-2xl">Total: U$D <b>{cartTotal}</b></p>
+                    <article className="flex flex-col items-center w-fit m-auto">
+                        <h3 className="text-xl font-bold">Fill your personal info and finish your purchase!</h3>
+                        {purchaseId ? <p>This is your unique purchase ID: <b>{purchaseId}</b>. Be sure to save it! </p> : null}
+                        <form className="flex flex-col w-fit items-center">
+                            <input className="my-2 rounded bg-gray-600/40 pl-2 py-auto text-black ring-2 ring-blue-300" type="text" name="fullName" ref={nameRef} placeholder="Full Name"/>
+                            <input className="mb-2 rounded bg-gray-600/40 pl-2 py-auto text-black ring-2 ring-blue-300" type="number" name="phone" ref={phoneRef} placeholder="Phone"/>
+                            <input className="rounded bg-gray-600/40 pl-2 py-auto text-black ring-2 ring-blue-300" type="email" name="eMail" ref={mailRef} placeholder="e-Mail"/>
+                            <button className="flex bg-red-500 rounded-md font-bold justify-center w-32 m-2 shadow mb-16" onClick={userCreation}>Finish Purchase</button>
+                        </form>
+                    </article>
+                </>
             :
             null
             }
+
         
             
         </>

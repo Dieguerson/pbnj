@@ -1,6 +1,5 @@
 import React, { createContext, useEffect, useState } from "react";
 import { getFirestore } from "../firebase/firebase.js";
-import axios from 'axios';
 
 export const cartContext = createContext();
 
@@ -16,6 +15,7 @@ export default function CartContext({children}) {
 
     const [pokemonCart, setPokemonCart] = useState([])
     const [finishPurchase, setFinishPurchase] = useState(false)
+    const [purchaseId, setPurchaseId] = useState("")
 
     const filterByType = async (type) => {
         if (type !== undefined) {
@@ -224,6 +224,7 @@ export default function CartContext({children}) {
                 newItem.type1 = originalPokemon.type1
                 newItem.type2 = originalPokemon.type2
                 newItem.bgGradient = getBgGradient(newItem.type1, newItem.type2)
+                newItem.id = originalPokemon.id
                 originalPokemon.stock -= ammount
                 setPokemonCart([...pokemonCart, newItem])
                 setFinishPurchase(true);
@@ -247,6 +248,16 @@ export default function CartContext({children}) {
         setForceRender(!forceRender)
     }
 
+    const onFinishPurchase = (buyer) => {
+        const newOrder ={} 
+        newOrder.buyer = buyer;
+        newOrder.order = pokemonCart
+        fireStore.collection("orderList").add(newOrder).then(async ({id}) => {setPurchaseId(id)})
+        pokemonCart.forEach(pokemon => {fireStore.collection("pokemonList").doc(pokemon.id).update({stock: 
+            originalPokemonList[pokemon.number - 1].stock})
+        console.log(originalPokemonList[pokemon.number - 1].stock)})
+    }
+
     useEffect(() => {
         fireStore.collection("pokemonList").get().then((querySnapshot) => {
             querySnapshot.docs.map(doc => originalPokemonList.push(doc.data()))
@@ -257,7 +268,24 @@ export default function CartContext({children}) {
 
     return (
         <>
-            <cartContext.Provider value={{originalPokemonList, listCreated, onAdd, onRemove, finishPurchase, setFinishPurchase, pokemonCart, getBgGradient, getTypes, forceRender, filterByType, pokemonListByType, pokemonListByIndividual, filterByIndividual, open}}>
+            <cartContext.Provider value={{
+                originalPokemonList,
+                listCreated,
+                onAdd,
+                onRemove,
+                finishPurchase,
+                setFinishPurchase,
+                pokemonCart,
+                getBgGradient,
+                getTypes,
+                forceRender,
+                filterByType,
+                pokemonListByType,
+                pokemonListByIndividual,
+                filterByIndividual,
+                open,
+                onFinishPurchase,
+                purchaseId}}>
                 {children}
             </cartContext.Provider>
         </>
