@@ -1,14 +1,11 @@
 import './App.css';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
-import NavBar from './components/NavBar.jsx';
-import ItemListContainer from './components/ItemListContainer.jsx';
-import Cart from './components/Cart';
-import CartContext from './components/CartContext';
+import NavBar from './components/navBar/NavBar';
+import ItemListContainer from './components/itemList/ItemListContainer';
+import Cart from './components/cart/Cart';
+import CartContext from './components/context/CartContext';
 
 function App() {
-  
-  const message = `Welcome to Our On Demand Pokemon Breeding Store!`;
-  const classes = "flex justify-center text-2xl font-bold text-[#123E59] mt-5";
 
   return (
     <>
@@ -31,16 +28,16 @@ function App() {
               <Cart />
             </Route>
             <Route exact path="/pbnj">
-              <ItemListContainer message={message} classes={classes}/>
+              <ItemListContainer />
             </Route>
             <Route exact path="/pbnj/types/:typeName">
-              <ItemListContainer message={message} classes={classes}/>
+              <ItemListContainer />
             </Route>
             <Route exact path="/pbnj/:individual">
-              <ItemListContainer message={message} classes={classes}/>
+              <ItemListContainer />
             </Route>
             <Route exact path="/pbnj/types/:typeName/:individual">
-              <ItemListContainer message={message} classes={classes}/>
+              <ItemListContainer />
             </Route>
             <Route exact path="/cart">
                 <Redirect to="/pbnj/cart" />

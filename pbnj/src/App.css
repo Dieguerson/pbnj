@@ -14,10 +14,12 @@ ul ul {
 
 ul ul li {
   display: block;
+  
 }
 
 ul li:hover ul {
   display:block;
+  text-align: center;
 }
 
 svg {
@@ -46,4 +48,58 @@ svg {
   50% { transform: translate(-10px, 0) rotate(-10deg); }
   60% { transform: translate(10px, 0) rotate(10deg); }
   100% { transform: translate(0, 0) rotate(0); }
+}
+
+.up {
+  animation: unmover 1.5s ease;
+  animation-fill-mode: forwards;
+}
+.down {
+  animation: mover 1.5s ease;
+  animation-fill-mode: forwards;
+}
+.growing { 
+  animation: grower 1s ease-out;
+  animation-fill-mode: forwards;
+  transform-origin: top;
+}
+.opaquelyGrowing { 
+  animation: opaqueGrower 1.5s ease-out;
+  animation-fill-mode: forwards;
+  transform-origin: top;
+}
+.shrinking { 
+  animation: shrinker 1s ease-out;
+  animation-fill-mode: forwards;
+  transform-origin: top;
+}
+.opaquelyShrinking { 
+  animation: opaqueShrinker 0.8s ease-out;
+  animation-fill-mode: forwards;
+  transform-origin: top;
+}
+
+@keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(5px); }
+}
+@keyframes unmover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-5px); }
+}
+@keyframes grower {
+  0% { height: 0; border: 0 }
+  100% { height: 100%; border: 100% }
+}
+@keyframes shrinker {
+  0% { height: 100%; border: 100%}
+  100% { height: 0; border: 0px }
+}
+@keyframes opaqueGrower {
+  0% { height: 0; opacity: 0;}
+  100% { height: 100%; opacity: 100%;}
+}
+@keyframes opaqueShrinker {
+  0% { height: 100%; opacity: 100%;}
+  100% { height: 0; opacity: 0;}
 }
