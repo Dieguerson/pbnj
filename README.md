@@ -1,4 +1,4 @@
-#Pokemon Breeders and Journalists: Un proyecto de React
+# Pokemon Breeders and Journalists: Un proyecto de React
 
 ## Flujo en el Home
 ![ Demo ](flujoHome.gif)
