@@ -30,8 +30,8 @@ checkout luego de realizar el Add to Cart.
 - **gh-pages**: Paquete para realizar el deploy a GitHub Pages.
 
 ## Setup
-Después de clonar el repo hacer **npm i** para acceder a todas las librerías y paquetes necesarios.
-Para iniciar el servidor de desarrollo: **npm start**
-Para hacer deploy: **npm run deploy**
+- Después de clonar el repo hacer **npm i** para acceder a todas las librerías y paquetes necesarios.
+- Para iniciar el servidor de desarrollo: **npm start**
+- Para hacer deploy: **npm run deploy**
 
 **Última actualización: 20/02/2022**
