@@ -186,6 +186,14 @@ export default function CartContext({children}) {
 
         return (gradientColor1 + " " + gradientColor2);
     }
+
+    const cartWidgetTotaler = () => {
+        let total = 0;
+        pokemonCart.forEach(pokemon => {
+            total += pokemon.ammount;
+        })
+        setCartAmmount(total);
+    }
     
     const onAdd = (ammount, name, price, number) => {
         if(ammount > 0){
@@ -228,6 +236,7 @@ export default function CartContext({children}) {
             pokemonCart[position].ammount -= 1;
             pokemonCart[position].price = pokemonCart[position].unitPrice * pokemonCart[position].ammount;
         }
+        cartWidgetTotaler()
         setForceRender(!forceRender);
     }
 
@@ -244,11 +253,7 @@ export default function CartContext({children}) {
     }
 
     useEffect(() => {
-        let total = 0;
-        pokemonCart.forEach(pokemon => {
-            total += pokemon.ammount;
-        })
-        setCartAmmount(total);
+        cartWidgetTotaler()
     }, [pokemonCart]);
 
     useEffect(() => {
