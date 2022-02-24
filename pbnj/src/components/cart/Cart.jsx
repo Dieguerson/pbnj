@@ -36,8 +36,8 @@ export default function Cart() {
 
     return (
         <>
-            <h1 className="text-2xl font-bold text-center my-4">Welcome to the Cart!</h1>
-            <section className="flex flex-wrap justify-center w-fit m-auto gap-x-6">
+            <h1 className="text-2xl font-bold text-center my-4 text-black">Welcome to the Cart!</h1>
+            <section className="flex flex-wrap justify-center w-fit m-auto gap-x-6 text-black">
                 {purchaseId && pokemonCart.length === 0
                     ?
                         <>
@@ -72,8 +72,8 @@ export default function Cart() {
             {pokemonCart.length > 0
                 ?
                     <>
-                        <p className="text-center mt-5 text-2xl">Total: U$D <b>{cartTotal}</b></p>
-                        <article className="flex flex-col items-center w-fit m-auto">
+                        <p className="text-center mt-5 text-2xl text-black">Total: U$D <b>{cartTotal}</b></p>
+                        <article className="flex flex-col items-center w-fit m-auto text-black" >
                             <h3 className="text-xl font-bold">Fill your personal info and finish your purchase!</h3>
                             <form className="flex flex-col w-fit items-center mb-16">
                                 <input className="my-2 rounded bg-gray-600/40 pl-2 py-auto text-black ring-2 ring-blue-300" type="text" name="fullName" ref={nameRef} placeholder="Full Name"/>

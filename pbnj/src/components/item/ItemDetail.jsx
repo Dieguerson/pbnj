@@ -20,7 +20,7 @@ export default function ItemDetail({singlePokemon, close}) {
     
     return (
         <>
-            <article className={`flex flex-col items-center border-8 rounded-lg border-amber-300 w-72 h-min bg-gradient-to-br ${bgGradient} ${animate}`}>
+            <article className={`flex flex-col items-center border-8 rounded-lg text-black border-amber-300 w-72 h-min bg-gradient-to-br ${bgGradient} ${animate}`}>
                 <h3 className={`w-full text-center capitalize font-bold mt-6 ${opaqueAnimate}`}>{singlePokemon.name}</h3>
                 <img src={singlePokemon.sprite} className={`w-1/2 h-fit ${opaqueAnimate}`} alt={singlePokemon.name}/>
                 <p className={`w-full ml-4 ${opaqueAnimate}`}><b>Type 1:</b> <em className="capitalize">{singlePokemon.type1}</em></p>

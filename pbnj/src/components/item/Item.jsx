@@ -64,7 +64,7 @@ export default function Item({singlePokemon}) {
         <>
             <article className="mt-4 col-span-4 sm:col-span-2 xl:col-span-1">
                 <div className="w-72 h-full m-auto flex flex-col items-center justify-start">
-                    <section className={`bg-red-500 rounded-t-full w-72 h-36 justify-self-start border-8 border-b-[12px] border-[#123E59] ${upAnimation}`}>
+                    <section className={`bg-red-500 rounded-t-full w-72 h-36 justify-self-start border-8 border-b-[12px] text-[#123E59] border-[#123E59] ${upAnimation}`}>
                         <img src={singlePokemon.sprite} className="max-w-64 max-h-28 mx-auto mt-3" alt={name} />
                         <NavLink activeClassName="!bg-orange-500" className="flex items-center justify-center h-20 w-20 border-8 border-[#123E59] bg-white rounded-full relative left-[96px] bottom-[29px] z-40" to={`/pbnj/${buttonUrl}`}>
                                 <button className={`w-full h-full rounded-full border-4 border-white`} onClick={openAndClose}>INFO</button>
