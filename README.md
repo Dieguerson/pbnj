@@ -36,4 +36,4 @@ checkout luego de realizar el Add to Cart.
 - Para iniciar el servidor de desarrollo: **npm start**
 - Para hacer deploy: **npm run deploy**
 
-**Última actualización: 20/02/2022**
+**Última actualización: 24/02/2022**
